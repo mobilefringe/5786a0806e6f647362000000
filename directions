@@ -1,0 +1,34 @@
+<div class="content_container main_container">
+    <h4 class="promo_main_header">Directions</h3>
+    <div class="direction_container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="overlay2" onclick="style.pointerEvents='none'"></div>
+                <iframe class="direction_map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24806.697865920098!2d-77.025979!3d38.996211!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c8ba41de8735%3A0x6ddf6365133e39ed!2s908+Ellsworth+Dr%2C+Silver+Spring%2C+MD+20910!5e0!3m2!1sen!2sus!4v1468441066400" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                
+                <h2 class="promo_list_name">From Leesburg</h2>
+                <p class="promo_list_desc">Take US-15 S to I-66 East toward Washington. Use the right lanes to take exit 43A-43B for US29 S Gainesville. Keep right, follow signs for Linton Hall Road. Keep right, follow signs for Linton Hall Rd. Turn left onto Linton Hall Road and the shopping center will be on your left.</p>
+                
+                <h2 class="promo_list_name">From Manassas</h2>
+                <p class="promo_list_desc">Take VA-234 BR N/Sudley Road to I-66 West toward Front Royal. Take exit 43A on the right,toward VA 619 E/Linton Hall Road. Keep right, follow signs for Linton Hall Rd. Turn left onto Linton Hall Road and the shopping center will be on your left.</p>
+                
+                <h2 class="promo_list_name">From Washington D.C.</h2>
+                <p class="promo_list_desc">Take I-66 West toward Front Royal. Take exit 43A on the right, toward VA 619 E/Linton Hall Road. Keep right, follow signs for Linton Hall Rd. Turn left onto Linton Hall Road and the shopping center will be on your left.</p>
+                
+                <h2 class="promo_list_name">From Front Royal</h2>
+                <p class="promo_list_desc">Take I-66 East toward Washington. Use the right lanes to take exit 43A-43B for US29 S Gainesville. Keep right, follow signs for Linton Hall Road. Keep right, follow signs for Linton Hall Rd. Turn left onto Linton Hall Road and the shopping center will be on your left.</p>
+                
+            </div>
+            <div class="col-md-4 hidden_phone">
+                <img style="margin-bottom:20px;" src="http://assets.codecloudapp.com/sites/5786a0806e6f647362000000/image/png/1456330978000/Plaza2.png" class="" alt="">
+                <img style="" src="http://assets.codecloudapp.com/sites/5786a0806e6f647362000000/image/png/1456330970000/Plaza.png" class="" alt="">
+            </div> 
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(e){
+        init(e);
+        show_content()
+    })
+</script>
