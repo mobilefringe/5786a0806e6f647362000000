@@ -2,19 +2,12 @@
     <h4 class="promo_main_header">About Us</h3>
     <div class="about_container">
         <div class="row">
-            <div class="col-md-8">
-                <img class="about_banner" src="http://cdn.mallmaverick.com/system/pages/images/000/000/067/original/contact.png?1367613964" alt="">
-                
-                <p class="promo_list_desc">Located on Georgia Avenue just two blocks from the Silver Spring MARC station, Downtown Silver Spring combines a vibrant, laid-back atmosphere with an eclectic mix of dining, shopping, and entertainment, for the Silver Spring area.   </p><br/>
-                
-                <p class="promo_list_desc">Anchored by Whole Foods, Regal Majestic Theater and with restaurants including AG Kitchen, Gusto Italian Grill, Nando's Peri Peri, Potbelly Sandwich Works and Copper Canyon Grill, Downtown Silver Spring is in a class by itself. Upscale retailers include H&M, LOFT, New York & Co., DSW, Ulta and more. Guests can enjoy year round activities including concerts, arts & craft fairs, cultural festivals and a farmers market.</p>
-                
-                 <p class="promo_list_desc">With all the shopping and dining in Silver Spring you need, Downtown Silver Spring also has mosaic tile steps and an interactive fountain for a fun day with the whole family!</p><br>
-              <p class="promo_list_desc"> <img src="http://cdn.mallmaverick.com/system/site_images/photos/000/018/727/original/green-wifi-link-hi.png?1463164974" style="width:30px" alt="">FREE Wi-Fi-<br>Enjoy free wi-fi throughout Downtown Silver Spring presented Adventist HealthCare Adventist Medical Group. To use, search for Downtown_SilverSpring_WIFI, click to join network, and follow instructions to log on. </p>  <br>
-              <p class="promo_list_desc"> <img src="http://cdn.mallmaverick.com/system/site_images/photos/000/018/731/original/fountain.png?1463165587" style="width:30px" alt="">Interactive Fountain-<br>Enjoy free wi-fi throughout Downtown Silver Spring presented Adventist HealthCare Adventist Medical Group. To use, search for Downtown_SilverSpring_WIFI, click to join network, and follow instructions to log on. </p>  
+            <div class="col-md-8 ">
+                <img class="about_banner" src="http://assets.codecloudapp.com/sites/56c740936e6f642d56000000/image/png/1456347907000/about_us.png" alt="">
+                <div id="mm_page_content" class="promo_list_desc"></div>
             </div>
             <div class="col-md-4">
-                <img  style="margin-bottom:20px;" src="http://assets.codecloudapp.com/sites/5786a0806e6f647362000000/image/png/1456330978000/Plaza2.png" class="hidden_phone" alt="">
+                  <img  style="margin-bottom:20px;" src="http://assets.codecloudapp.com/sites/5786a0806e6f647362000000/image/png/1456330978000/Plaza2.png" class="hidden_phone" alt="">
                 <div class="col-md-12 property_right">
                     <h2 class="promo_list_name">Property Management</h2>
                     <div class="col-md-12">
@@ -35,6 +28,23 @@
 <script>
     $(document).ready(function(e){
         init(e);
-        show_content()
+        loadMallDataCached(renderPage);
     })
+    
+    function renderPage(){
+        var pathArray = window.location.pathname.split( '/' );
+        var slug = pathArray[pathArray.length-1];
+        
+        prefix = get_prefix();
+        $('#top_banner').addClass(slug)
+        var pages_json = prefix+"/pages/vagateway-about-us.json"
+        $.getJSON(pages_json).done(function(data) {
+            $('#mm_page_content').html(data.body);
+        }).fail(function(jqXHR) {
+            if (jqXHR.status == 404) {
+                $("#mm_page_content").text("Sorry. We cant find the page you looking for.");
+            }
+        }); 
+        show_content();
+    }
 </script>
